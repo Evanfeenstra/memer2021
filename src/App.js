@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -21,10 +21,10 @@ function App() {
     const j = await r.json()
     if(j.data) {
       setMemes(j.data)
-      setLoading(false)
       setTerm(text)
       setText('')
     }
+    setLoading(false)
   }
 
   console.log(memes)
