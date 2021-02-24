@@ -19,10 +19,12 @@ function App() {
     url += '&q=' + text
     const r = await fetch(url)
     const j = await r.json()
-    setMemes(j.data)
-    setLoading(false)
-    setTerm(text)
-    setText('')
+    if(j.data) {
+      setMemes(j.data)
+      setLoading(false)
+      setTerm(text)
+      setText('')
+    }
   }
 
   console.log(memes)
